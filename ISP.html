@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<title>
+  <body>
+<p>
+  <link rel="stylesheet" href="Style.css">
+</p>
+  </body>
+</title>
+</head>  
+  <h4>
+	The concept was to make a platformer where the object you controlled stayed still and spikes and blocks flew tward you and you had to jump over and on them. Our motivation was getting a good grade. We expected some degree of failure, but were suprised by what errors we did get. Some of our code for the starting screen used two images constantly scrolling past to make an illusion of movement.
+      </h4>
+    <table>
+      <tr>
+	<td>
+	  <br>    import Foundation
+	  <br>    import Scenes
+	  <br>    import Igis
+	  <br>    class Parallax : RenderableEntity {
+	  <br>    let backgroundImage : Image
+	  <br>    var destinationPrimary = Rect(topLeft:Point(x:0, y:0), size:Size(width: 10, height: 10))
+	  <br>    var destinationSecondary = Rect(topLeft:Point(x:0, y:0), size:Size(width: 10, height: 10))
+	  <br>    var velocityX : Int
+	  <br>    var velocityY : Int
+	  <br>    init() {
+	  <br>    //initialize the background image and set the intial speed of the background
+	  <br>    guard let backgroundImageURL = URL(string:"https://d2zia2w5autnlg.cloudfront.net/352/618cff3e20616-large") else {
+	  <br>    fatalError("Failed to create URL for whitehouse")
+	  <br>    }
+	  <br>    velocityX = 0
+	  <br>    velocityY = 0
+	  <br>    backgroundImage = Image(sourceURL:backgroundImageURL)
+	  <br>    // Using a meaningful name can be helpful for debugging
+	  <br>    super.init(name:"Parallax")
+	  <br>    }
+	  <br>    func changeVelocity(velocityX:Int, velocityY:Int) {
+	  <br>    //function to return velocities for both the x and y directions for the background
+	  <br>    self.velocityX = velocityX
+	  <br>    self.velocityY = velocityY
+	  <br>    }
+	  <br>    override func calculate(canvasSize: Size) {
+	  <br>    //scrolling the background image infinitely
+	  <br>    destinationPrimary.size = canvasSize
+	  <br>    destinationPrimary.topLeft += Point(x: velocityX, y: velocityY)
+	  <br>    destinationSecondary.size = canvasSize
+	  <br>    destinationSecondary.topLeft.x = destinationPrimary.topLeft.x + destinationPrimary.size.width
+	  <br>
+	  <br>    // Form a bounding rectangle around the canvas
+	  <br>    let canvasBoundingRect = Rect(size:canvasSize)
+	  <br>
+	  <br>    // Form a bounding rect on the edge of the image
+	  <br>    let secondBoundingRect = destinationSecondary
+	  <br>    //if the edge of the image runs past the edge of the screen
+	  <br>    //move the image back to its beginning position
+	  <br>    let secondTooFar = secondBoundingRect.topLeft.x (lessthan) canvasBoundingRect.topLeft.x
+	  <br>    if secondTooFar {
+	  <br>    destinationPrimary.topLeft.x = 0
+	  <br>	}
+	  <br>	}
+	  <br>	//function to clear the screen between render cycles
+	  <br>	func clear(canvas:Canvas) {
+	  <br>	if let canvasSize = canvas.canvasSize {
+	  <br>						      let rect = Rect(topLeft:Point(), size:canvasSize)
+	  <br>						      let rectangle = Rectangle(rect:rect, fillMode: .clear)
+	  <br>						      canvas.render(rectangle)
+	  <br>						      }
+	  <br>						      }
+	  <br>						      
+	  <br>						      override func setup(canvasSize: Size, canvas: Canvas) {
+	  <br>						      //initial position of the background image
+	  <br>						      destinationPrimary.topLeft.x = 0
+	  <br>						      destinationPrimary.topLeft.y = 0
+	  <br>						      destinationSecondary.topLeft.x = 0
+	  <br>						      destinationSecondary.topLeft.y = 0
+	  <br>						      canvas.setup(backgroundImage)
+	  <br>						      }
+	  <br>						      override func render(canvas:Canvas) {
+	  <br>						      //render the background image
+	  <br>						      if backgroundImage.isReady {
+	  <br>						      clear(canvas:canvas)
+	  <br>						      backgroundImage.renderMode = .destinationRect(destinationPrimary)
+	  <br>						      canvas.render(backgroundImage)
+	  <br>						      backgroundImage.renderMode = .destinationRect(destinationSecondary)
+	  <br>						      canvas.render(backgroundImage)
+	  <br>						      }
+	  <br>						      }
+	  <br>						      }
+	</td>
+      </tr>
+    </table>
+</html>
