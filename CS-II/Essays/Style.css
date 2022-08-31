@@ -1,0 +1,21 @@
+head {
+    background-color: yellow;
+}
+body {
+    background-color: aqua;
+}
+h1 {
+    color: blue;
+}
+p {
+    color: navy;
+}
+h11 {
+    color: darkgrey;
+}
+table {
+    background-color: black;
+}
+table {
+    border-size: 3;
+}
