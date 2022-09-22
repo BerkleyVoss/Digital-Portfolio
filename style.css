@@ -1,15 +1,3 @@
-table, th, td {
-    border: 3px solid black;
-}
-th, td {
-    padding: 10px;
-}
-head {
-    background-color: lightblue;
-}
 h1 {
     color: black;
-}
-p {
-    color: navy;
 }
