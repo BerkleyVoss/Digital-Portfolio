@@ -1,0 +1,122 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.Simple-debug.module" : {
+      "executable" : "/usr/bin/swiftc",
+      "importPath" : "/home/berkley-voss/projects/Tokenization/.build/x86_64-unknown-linux-gnu/debug",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/berkley-voss/projects/Tokenization/main.swift"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "Simple",
+      "moduleOutputPath" : "/home/berkley-voss/projects/Tokenization/.build/x86_64-unknown-linux-gnu/debug/Simple.build/Simple.swiftmodule",
+      "objects" : [
+        "/home/berkley-voss/projects/Tokenization/.build/x86_64-unknown-linux-gnu/debug/Simple.build/main.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-swift-version",
+        "5",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/home/berkley-voss/projects/Tokenization/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-g",
+        "-j16",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/home/berkley-voss/projects/Tokenization/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-color-diagnostics",
+        "-enable-bare-slash-regex",
+        "-Xcc",
+        "-fPIC"
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/berkley-voss/projects/Tokenization/.build/x86_64-unknown-linux-gnu/debug/Simple.build/main.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/berkley-voss/projects/Tokenization/.build/x86_64-unknown-linux-gnu/debug/Simple.build/Simple.swiftmodule"
+        }
+      ],
+      "sources" : [
+        "/home/berkley-voss/projects/Tokenization/main.swift"
+      ],
+      "tempsPath" : "/home/berkley-voss/projects/Tokenization/.build/x86_64-unknown-linux-gnu/debug/Simple.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "Simple" : [
+      "/usr/bin/swiftc",
+      "-module-name",
+      "Simple",
+      "-incremental",
+      "-c",
+      "/home/berkley-voss/projects/Tokenization/main.swift",
+      "-I",
+      "/home/berkley-voss/projects/Tokenization/.build/x86_64-unknown-linux-gnu/debug",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-swift-version",
+      "5",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/home/berkley-voss/projects/Tokenization/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-g",
+      "-j16",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/home/berkley-voss/projects/Tokenization/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-color-diagnostics",
+      "-enable-bare-slash-regex",
+      "-Xcc",
+      "-fPIC",
+      "-driver-use-frontend-path",
+      "/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "Simple" : [
+
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  }
+}
